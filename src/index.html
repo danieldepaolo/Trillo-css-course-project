@@ -10,6 +10,10 @@
   <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 
   <title>trillo &mdash; Your all-in-one booking app</title>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -33,19 +37,51 @@
             <span class="icon-box__notifications">7</span>
           </div>
         </div>
-        <div class="icon-box">
+        <button id="nav-chat-icon-button" class="icon-box">
           <div class="icon-box__inner">
             <svg class="icon-box__icon">
               <use xlink:href="img/sprite.svg#icon-chat"></use>
             </svg>
-            <span class="icon-box__notifications">13</span>
+            <span class="icon-box__notifications">5</span>
           </div>
-        </div>
+        </button>
         <div class="app-bar__profile-user">
           <img src="img/user-2.jpg" width="50px" alt="User image" class="app-bar__user-image">
           <span class="app-bar__username">Jennifer</span>
         </div>
       </nav>
+      <div id="nav-chat-popover-menu" class="popover-menu">
+        <div class="chat-area">
+          <div class="chat-area__top">
+            <h3 class="chat-area__top--heading">Chat messages</h3>
+          </div>
+          <ul class="chat-list">
+            <li class="chat-list__item">
+              <h4 class="chat-list__item--title">Laura</h4>
+              <p class="chat-list__item--message">How are you doing with your most recent stay? Let me know if you
+                need anything.</p>
+            </li>
+            <li class="chat-list__item">
+              <h4 class="chat-list__item--title">John</h4>
+              <p class="chat-list__item--message">I hope your previous stay with us was to your satisfaction.</p>
+            </li>
+            <li class="chat-list__item">
+              <h4 class="chat-list__item--title">Jim</h4>
+              <p class="chat-list__item--message">If you want to go to the spa, please use the towels provided at the
+                location instead of bathroom towels.</p>
+            </li>
+            <li class="chat-list__item">
+              <h4 class="chat-list__item--title">Brianna</h4>
+              <p class="chat-list__item--message">Noted sir. Your checkout date has been pushed back by two days. Have
+                a great day!</p>
+            </li>
+            <li class="chat-list__item">
+              <h4 class="chat-list__item--title">Vivian</h4>
+              <p class="chat-list__item--message">Understood, and we look forward to your stay in October! Best, Vivian</p>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
     <div class="content">
       <nav class="sidebar">

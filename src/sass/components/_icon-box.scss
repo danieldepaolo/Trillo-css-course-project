@@ -1,6 +1,8 @@
 @use "../mixins";
 
 .icon-box {
+  position: relative;
+
   &__inner {
     position: relative;
     display: flex;
