@@ -2,6 +2,8 @@
 
 [Live site](https://danieldepaolo.github.io/Trillo-css-course-project/)
 
+Course: [Advanced CSS and Sass](https://www.udemy.com/course/advanced-css-and-sass/) by Jonas Schmedtmann.
+
 ## Screenshots
 
 ### Desktop
