@@ -17,7 +17,7 @@ Course: [Advanced CSS and Sass](https://www.udemy.com/course/advanced-css-and-sa
 
 ## Potential future work
 
-1. Display some kind of user menu when clicking on the user profile area
-2. Display a menu when clicking on chat icon that shows recent messages
-3. Gallery feature showing larger versions of the images
-4. Captions for the images
+- [ ] Display some kind of user menu when clicking on the user profile area
+- [x] Display a menu when clicking on chat icon that shows recent messages
+- [ ] Gallery feature showing larger versions of the images
+- [ ] Captions for the images
