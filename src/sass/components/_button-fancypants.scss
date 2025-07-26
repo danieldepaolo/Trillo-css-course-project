@@ -1,0 +1,45 @@
+.button-fancypants {
+  border: none;
+  position: relative;
+  border-radius: 100px;
+  font-size: 1.5rem;
+  color: var(--color-grey-light-1);
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  background: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+
+  &__visible,
+  &__hidden {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+    padding: 2rem 8rem;
+  }
+
+  &__hidden {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__hidden {
+    top: 0;
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate .5s;
+  }
+}

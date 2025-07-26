@@ -1,0 +1,14 @@
+@use "../mixins";
+
+.image-chain {
+  &__photo {
+    @include mixins.round-shape(4rem);
+
+    box-sizing: content-box;    
+    border: 3px solid white;
+
+    &:not(:last-child) {
+      margin-right: -1.4rem;
+    }
+  }
+}

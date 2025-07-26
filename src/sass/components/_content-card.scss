@@ -1,0 +1,12 @@
+@use "../mixins";
+
+.content-card {
+  padding: 1.9rem 2.5rem;
+  box-shadow: var(--shadow-light);
+  background-color: white;
+  border-radius: 3px;
+
+  @include mixins.responsive-phone {
+    padding: 1.3rem 2rem;
+  }
+}

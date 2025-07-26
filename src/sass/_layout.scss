@@ -1,0 +1,226 @@
+@use "mixins";
+
+.app-container {
+  width: 90%;
+  max-width: 125rem;
+  margin: 8rem auto;
+  background-color: white;
+  box-shadow: var(--shadow-dark);
+
+  @include mixins.responsive-tablet {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.app-bar {
+  display: flex;
+  align-items: center;
+  height: 6rem;
+  justify-content: space-between;
+  background-color: inherit;
+  border-bottom: var(--light-line);
+  padding: 0 1rem;
+  gap: 1rem;
+  font-size: 1.4rem;
+
+  @include mixins.responsive-phone {
+    align-content: center;
+    flex-wrap: wrap;
+    height: 10rem;
+  }
+
+  .search {
+    max-width: 35rem;
+    flex: 1 1 20rem;
+
+    @include mixins.responsive-phone {
+      max-width: none;
+      order: 1;
+      flex: 1 1 100%;
+    }
+  }
+
+  &__logo {
+    width: 4.5rem;
+  }
+
+  &__profile {
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+
+    & > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 100%;
+      cursor: pointer;
+      padding: 0 1.5rem;
+      &:hover {
+        background-color: var(--color-grey-light-2);
+      }
+    }
+  }
+
+  &__user-image {
+    @include mixins.round-shape(3.8rem);
+
+    margin-right: 1rem;
+  }
+}
+
+.content {
+  display: flex;
+  min-height: 80vh;
+
+  @include mixins.responsive-tablet {
+    flex-direction: column;
+  }
+}
+
+.sidebar {
+  flex: 0 0 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+  background-color: var(--color-grey-dark-1);
+  color: var(--color-grey-light-1);
+  font-size: 1.5rem;
+
+  @include mixins.responsive-tablet {
+    flex: 1;
+  }
+
+  @include mixins.responsive-phone {
+    overflow-x: auto;
+  }
+
+  &__nav-items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+
+    @include mixins.responsive-tablet {
+      margin-top: 0;
+      flex-direction: row;
+    }
+  }
+
+  &__nav-item {
+    cursor: pointer;
+    height: 5rem;
+    position: relative;
+
+    @include mixins.responsive-tablet {
+      flex: 1 1;
+    }
+
+    @include mixins.responsive-phone {
+      flex: 0 0 15rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: var(--color-primary);
+      width: 3px;
+      transform: scaleY(0);
+      transition: width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, transform 0.2s,
+        background-color 0.1s;
+    }
+
+    &:hover::before,
+    &--active::before {
+      width: 100%;
+      transform: scaleY(1);
+    }
+
+    &:active::before {
+      background-color: var(--color-primary-light);
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: inherit;
+    text-transform: uppercase;
+
+    @include mixins.responsive-tablet {
+      justify-content: center;
+    }
+
+    @include mixins.responsive-phone {
+      padding: 0;
+      gap: 1rem;
+    }
+  }
+
+  &__icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: currentColor;
+  }
+
+  .legal {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--color-grey-light-4);
+
+    @include mixins.responsive-tablet {
+      display: none;
+    }
+  }
+}
+
+.main-content {
+  flex: 1 1;
+  background-color: var(--color-grey-light-2);
+}
+
+.details {
+  padding: 3rem;
+  display: flex;
+  gap: 3rem;
+  font-size: 1.4rem;
+  align-items: flex-start;
+
+  @include mixins.responsive-tablet {
+    gap: 2em;
+    padding: 2em;
+  }
+
+  @include mixins.responsive-phone {
+    gap: 1.5rem;
+    padding: 1.5rem;
+    flex-direction: column;
+  }
+}
+
+.cta-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background-color: white;
+  padding: 2rem;
+
+  &__message {
+    font-size: 1.7rem;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+}
