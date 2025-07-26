@@ -11,7 +11,7 @@
     "compress:css": "sass --style=compressed src/css/generated/style.prefix.css src/css/generated/style.min.css",
     "build:css": "npm-run-all compile:sass prefix:css compress:css",
     "build:html": "node src/js/build/modify-html.js",
-    "build:copy": "cp src/css/generated/style.min.css dist/css/ && cp src/img/* dist/img/",
+    "build:copy": "cp src/css/generated/style.min.css dist/css/ && cp src/img/* dist/img/ && cp src/js/index.js dist/js",
     "build:dir": "node src/js/build/dist-prep.js",
     "build": "npm-run-all build:dir build:css build:html build:copy",
     "dev": "live-server src",
