@@ -7,11 +7,11 @@
   "scripts": {
     "watch:sass": "sass src/sass/main.scss src/css/style.css -w",
     "compile:sass": "sass src/sass/main.scss src/css/generated/style.compiled.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' src/css/generated/style.compiled.css -o src/css/generated/style.prefix.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 5 versions' src/css/generated/style.compiled.css -o src/css/generated/style.prefix.css",
     "compress:css": "sass --style=compressed src/css/generated/style.prefix.css src/css/generated/style.min.css",
     "build:css": "npm-run-all compile:sass prefix:css compress:css",
     "build:html": "node src/js/modify-html.js",
-    "build:copy": "cp src/css/generated/style.min.css dist/css/ && cp src/js/index.js dist/js && cp src/img/* dist/img/ && cp -r src/css/icon-font/fonts dist/css/",
+    "build:copy": "cp src/css/generated/style.min.css dist/css/ && cp src/img/* dist/img/",
     "build:dir": "node src/js/dist-prep.js",
     "build": "npm-run-all build:dir build:css build:html build:copy",
     "dev": "live-server src",
